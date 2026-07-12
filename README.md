@@ -61,7 +61,6 @@ Airtable + Telegram
 | Data | Private NAS |
 
 ##  Author
-
 **Sarath Kumar Radhakrishnan**
 -  M.Sc. Cybersecurity | Riga Technical University
 -  Erasmus+ Intern | Herbs Are My World, Cyprus
