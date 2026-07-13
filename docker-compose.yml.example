@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  rag-api:
+    build: ./api
+    container_name: rag-api
+    restart: unless-stopped
+    ports:
+      - "8500:8500"
+    volumes:
+      - /path/to/your/books:/books:ro
+      - ./data:/app/data
+    environment:
+      - CHROMA_HOST=chromadb
+      - CHROMA_PORT=8000
+      - OLLAMA_HOST=http://ollama:11434
+      # Add your API keys here (get free at):
+      # https://console.groq.com/keys (6 keys for rotation)
+      - GROQ_API_KEY=your_groq_key_here
+      - GROQ_API_KEY_2=your_groq_key_here
+      - GROQ_API_KEY_3=your_groq_key_here
+      - GROQ_API_KEY_4=your_groq_key_here
+      - GROQ_API_KEY_5=your_groq_key_here
+      - GROQ_API_KEY_6=your_groq_key_here
+      # https://cloud.cerebras.ai/
+      - CEREBRAS_API_KEY=your_cerebras_key_here
+      - CEREBRAS_API_KEY_2=your_cerebras_key_here
+      - CEREBRAS_API_KEY_3=your_cerebras_key_here
+      # https://aistudio.google.com/app/apikey
+      - GEMINI_API_KEY=your_gemini_key_here
+      # https://console.mistral.ai
+      - MISTRAL_API_KEY=your_mistral_key_here
+    depends_on:
+      - chromadb
+      - ollama
+
+  chromadb:
+    image: chromadb/chroma:latest
+    container_name: chromadb
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./chroma_data:/chroma/chroma
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    volumes:
+      - ./ollama_data:/root/.ollama
+    # After first run, install embedding model:
+    # docker exec ollama ollama pull bge-m3
