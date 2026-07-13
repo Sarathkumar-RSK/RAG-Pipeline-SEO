@@ -2,7 +2,7 @@
 
 Production RAG system built with n8n that generates 
 SEO-optimized articles from herbal reference books 
-stored on local NAS infrastructure.
+stored on local NAS infrastructure. Automated SEO article generation system for herbal medicine content using RAG (Retrieval-Augmented Generation) with your own book library.
 
 ## Workflow
 
@@ -59,6 +59,16 @@ Airtable + Telegram
 | AI Detection | 33% |
 | Automation | End-to-end |
 | Data | Private NAS |
+
+## 🎯 Features
+
+- ✅ RAG-based content generation from 14+ herbal medicine PDFs
+- ✅ Multi-provider LLM failover (Groq, Cerebras, Gemini, Mistral)
+- ✅ Anti-AI detection humanization pipeline
+- ✅ n8n workflow automation
+- ✅ Telegram & Airtable integration
+- ✅ 12-15% AI detection score (Quillbot verified)
+- ✅ ChromaDB vector search with Ollama embeddings
 
 ##  Author
 **Sarath Kumar Radhakrishnan**
