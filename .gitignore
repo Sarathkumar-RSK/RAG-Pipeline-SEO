@@ -1,0 +1,43 @@
+# Environment files (NEVER commit API keys)
+.env
+docker-compose.yml
+*.env
+
+# Data folders
+chroma_data/
+ollama_data/
+data/
+books/
+*.pdf
+*.epub
+
+# Backups
+*.backup*
+*.bak
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+env/
+
+# Logs
+*.log
+logs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+secrets/
+credentials/
+*_secret*
+*_credentials*
